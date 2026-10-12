@@ -1,17 +1,10 @@
 package com.shieldbank.model;
 
-/**
- * Банковский счёт с уникальным номером и балансом в копейках.
- */
-public class Account {
 
+public class Account {
     private final long number;
     private long balance;
 
-    /**
-     * @param number  уникальный номер счёта
-     * @param balance начальный баланс в копейках
-     */
     public Account(long number, long balance) {
         this.number = number;
         this.balance = balance;
