@@ -19,9 +19,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Точка входа приложения ShieldBank.
- */
 public final class Main {
 
     private static final ConsoleMenu MENU = new ConsoleMenu();
@@ -43,11 +40,9 @@ public final class Main {
     private Main() {
     }
 
-    /**
-     * @param args аргументы командной строки
-     */
     public static void main(String[] args) {
         boolean running = true;
+        
         while (running) {
             printMainMenu();
             int choice = MENU.readInt("Выбор: ");
@@ -226,6 +221,7 @@ public final class Main {
                 GraphAlgorithms.breadthFirstSearch(graph, start));
 
         List<Long> cycle = GraphAlgorithms.findCycle(graph);
+        
         if (cycle.isEmpty()) {
             System.out.println("Циклов нет.");
         } else {
@@ -237,8 +233,10 @@ public final class Main {
 
         Map<Long, PathResult> paths = GraphAlgorithms.findShortestPaths(graph, start);
         System.out.println("Кратчайшие пути:");
+        
         for (Map.Entry<Long, PathResult> entry : paths.entrySet()) {
             PathResult result = entry.getValue();
+            
             if (result.isReachable()) {
                 System.out.printf("  Счёт %d, комиссия %d, путь %s%n",
                         entry.getKey(), result.getTotalWeight(), result.getPath());
@@ -280,6 +278,7 @@ public final class Main {
                 WindowAnalytics.findWindowsAboveLimit(values, windowSize, limit);
         System.out.printf("Окон выше лимита: %d%n", windows.size());
         int previewLimit = Math.min(windows.size(), 10);
+        
         for (int index = 0; index < previewLimit; index++) {
             System.out.printf("  %s%n", windows.get(index));
         }
@@ -293,6 +292,7 @@ public final class Main {
     }
 
     private static String formatPair(long[] pair) {
+        
         if (pair == null) {
             return "пара не найдена";
         }
@@ -313,6 +313,7 @@ public final class Main {
         System.out.printf("%-10s %-20s %-20s%n", "Месяц", "Naive (ms)", "Memo (ms)");
         int[] benchmarks = {BENCHMARK_MONTH_SMALL, BENCHMARK_MONTH_MEDIUM,
                 BENCHMARK_MONTH_LARGE};
+        
         for (int value : benchmarks) {
             long naiveStart = System.nanoTime();
             ContributionCalculator.calculateContributionNaive(value);
@@ -332,6 +333,7 @@ public final class Main {
     private static void demoEndToEnd() {
         System.out.println("Сквозной сценарий:");
         BankService bank = new BankService();
+        
         for (long number = 1001L; number <= 1020L; number++) {
             bank.register(new Account(number, INITIAL_BALANCE));
         }
@@ -349,6 +351,7 @@ public final class Main {
         System.out.printf("Выписка отсортирована, размер: %d%n", statement.size());
 
         long[] amounts = new long[statement.size()];
+        
         for (int index = 0; index < statement.size(); index++) {
             amounts[index] = statement.get(index).getAmount();
         }
