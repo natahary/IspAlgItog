@@ -74,10 +74,6 @@ BR-7: ContributionCalculator: наивная рекурсия и мемоиза�
 
 Сквозной сценарий: BankService → журнал → выписка → аналитика.
 
-## Замеры производительности
-
-Заполняются после запуска приложения. См. раздел Скриншоты.
-
 ## Структура проекта
 
     IspAlgItog/
@@ -114,6 +110,7 @@ BR-7: ContributionCalculator: наивная рекурсия и мемоиза�
 
 Разрешено: ArrayList, HashMap, HashSet, ArrayDeque, PriorityQueue, Random, Scanner.
 
-## Автор
+<img width="976" height="426" alt="image" src="https://github.com/user-attachments/assets/0bfad3df-afd2-4a16-9ec8-9cf76e12cf97" />
+<img width="1272" height="184" alt="image" src="https://github.com/user-attachments/assets/fd39ec8b-a462-4c32-b139-29784deb7163" />
 
-Наталья Дегтярёва
+
