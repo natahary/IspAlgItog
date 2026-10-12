@@ -1,19 +1,10 @@
 package com.shieldbank.model;
 
-/**
- * Направленный перевод между счетами — ребро графа переводов.
- */
 public class Transfer {
-
     private final long from;
     private final long to;
     private final int commission;
 
-    /**
-     * @param from       счёт-источник
-     * @param to         счёт-получатель
-     * @param commission комиссия
-     */
     public Transfer(long from, long to, int commission) {
         this.from = from;
         this.to = to;
